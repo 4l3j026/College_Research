@@ -1,0 +1,351 @@
+
+
+Microchip MPLAB XC8 Assembler V2.46 build 20240104201356 
+                                                                                               Wed Apr 10 18:11:17 2024
+
+Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1 
+     1                           	processor	18F46K22
+     2                           	fnconf	rparam,??,?,0
+     3                           	pagewidth 120
+     4                           	opt	flic
+     5                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,lowdata,noexec
+     7                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     8                           	psect	smallconst,global,reloc=2,class=SMALLCONST,delta=1,noexec
+     9                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    10                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    11   000000                     
+    12                           ; Generated 12/10/2023 GMT
+    13                           ; 
+    14                           ; Copyright © 2023, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    15                           ; All rights reserved.
+    16                           ; 
+    17                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    18                           ; 
+    19                           ; Redistribution and use in source and binary forms, with or without modification, are
+    20                           ; permitted provided that the following conditions are met:
+    21                           ; 
+    22                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    23                           ;        conditions and the following disclaimer.
+    24                           ; 
+    25                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    26                           ;        of conditions and the following disclaimer in the documentation and/or other
+    27                           ;        materials provided with the distribution. Publication is not required when
+    28                           ;        this file is used in an embedded application.
+    29                           ; 
+    30                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    31                           ;        software without specific prior written permission.
+    32                           ; 
+    33                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    34                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    35                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    36                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    37                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    38                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    39                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    40                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    41                           ; 
+    42                           ; 
+    43                           ; Code-generator required, PIC18F46K22 Definitions
+    44                           ; 
+    45                           ; SFR Addresses
+    46   000000                     
+    47                           ; #config settings
+    48                           
+    49                           	psect	cinit
+    50   00100A                     __pcinit:
+    51                           	callstack 0
+    52   00100A                     start_initialization:
+    53                           	callstack 0
+    54   00100A                     __initialization:
+    55                           	callstack 0
+    56   00100A                     end_of_initialization:
+    57                           	callstack 0
+    58   00100A                     __end_of__initialization:
+    59                           	callstack 0
+    60   00100A  0100               	movlb	0
+    61   00100C  EF01  F008         	goto	_main	;jump to C main() function
+    62                           
+    63                           	psect	cstackCOMRAM
+    64   000000                     __pcstackCOMRAM:
+    65                           	callstack 0
+    66   000000                     
+    67                           ; 1 bytes @ 0x0
+    68 ;;
+    69 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+    70 ;;
+    71 ;; *************** function _main *****************
+    72 ;; Defined at:
+    73 ;;		line 11 in file "main.c"
+    74 ;; Parameters:    Size  Location     Type
+    75 ;;		None
+    76 ;; Auto vars:     Size  Location     Type
+    77 ;;		None
+    78 ;; Return value:  Size  Location     Type
+    79 ;;                  1    wreg      void 
+    80 ;; Registers used:
+    81 ;;		None
+    82 ;; Tracked objects:
+    83 ;;		On entry : 0/0
+    84 ;;		On exit  : 0/0
+    85 ;;		Unchanged: 0/0
+    86 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+    87 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+    88 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+    89 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+    90 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+    91 ;;Total ram usage:        0 bytes
+    92 ;; This function calls:
+    93 ;;		Nothing
+    94 ;; This function is called by:
+    95 ;;		Startup code after reset
+    96 ;; This function uses a non-reentrant model
+    97 ;;
+    98                           
+    99                           	psect	text0
+   100   001002                     __ptext0:
+   101                           	callstack 0
+   102   001002                     _main:
+   103                           	callstack 31
+   104   001002                     l5:
+   105   001002  EF01  F008         	goto	l5
+   106   001006  EF00  F000         	goto	start
+   107   00100A                     __end_of_main:
+   108                           	callstack 0
+   109                           
+   110                           	psect	smallconst
+   111   001000                     __psmallconst:
+   112                           	callstack 0
+   113   001000  00                 	db	0
+   114   001001  00                 	db	0	; dummy byte at the end
+   115   000000                     
+   116                           	psect	rparam
+   117   000000                     tosu	equ	0xFFF
+   118                           tosh	equ	0xFFE
+   119                           tosl	equ	0xFFD
+   120                           stkptr	equ	0xFFC
+   121                           pclatu	equ	0xFFB
+   122                           pclath	equ	0xFFA
+   123                           pcl	equ	0xFF9
+   124                           tblptru	equ	0xFF8
+   125                           tblptrh	equ	0xFF7
+   126                           tblptrl	equ	0xFF6
+   127                           tablat	equ	0xFF5
+   128                           prodh	equ	0xFF4
+   129                           prodl	equ	0xFF3
+   130                           indf0	equ	0xFEF
+   131                           postinc0	equ	0xFEE
+   132                           postdec0	equ	0xFED
+   133                           preinc0	equ	0xFEC
+   134                           plusw0	equ	0xFEB
+   135                           fsr0h	equ	0xFEA
+   136                           fsr0l	equ	0xFE9
+   137                           wreg	equ	0xFE8
+   138                           indf1	equ	0xFE7
+   139                           postinc1	equ	0xFE6
+   140                           postdec1	equ	0xFE5
+   141                           preinc1	equ	0xFE4
+   142                           plusw1	equ	0xFE3
+   143                           fsr1h	equ	0xFE2
+   144                           fsr1l	equ	0xFE1
+   145                           bsr	equ	0xFE0
+   146                           indf2	equ	0xFDF
+   147                           postinc2	equ	0xFDE
+   148                           postdec2	equ	0xFDD
+   149                           preinc2	equ	0xFDC
+   150                           plusw2	equ	0xFDB
+   151                           fsr2h	equ	0xFDA
+   152                           fsr2l	equ	0xFD9
+   153                           status	equ	0xFD8
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95      0       0
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+    BANK8           256      0       0
+    BANK9           256      0       0
+    BANK10          256      0       0
+    BANK11          256      0       0
+    BANK12          256      0       0
+    BANK13          256      0       0
+    BANK14          256      0       0
+    BANK15           56      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Critical Paths under _main in BANK8
+
+    None.
+
+Critical Paths under _main in BANK9
+
+    None.
+
+Critical Paths under _main in BANK10
+
+    None.
+
+Critical Paths under _main in BANK11
+
+    None.
+
+Critical Paths under _main in BANK12
+
+    None.
+
+Critical Paths under _main in BANK13
+
+    None.
+
+Critical Paths under _main in BANK14
+
+    None.
+
+Critical Paths under _main in BANK15
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 0
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+EEDATA             400      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F      0       0       1        0.0%
+STACK                0      0       0       2        0.0%
+DATA                 0      0       0       3        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK6           100      0       0      16        0.0%
+BANK6              100      0       0      17        0.0%
+BITBANK7           100      0       0      18        0.0%
+BANK7              100      0       0      19        0.0%
+BITBANK8           100      0       0      20        0.0%
+BANK8              100      0       0      21        0.0%
+BITBANK9           100      0       0      22        0.0%
+BANK9              100      0       0      23        0.0%
+BITBANK10          100      0       0      24        0.0%
+BANK10             100      0       0      25        0.0%
+BITBANK11          100      0       0      26        0.0%
+BANK11             100      0       0      27        0.0%
+BITBANK12          100      0       0      28        0.0%
+BANK12             100      0       0      29        0.0%
+BITBANK13          100      0       0      30        0.0%
+BANK13             100      0       0      31        0.0%
+BITBANK14          100      0       0      32        0.0%
+BANK14             100      0       0      33        0.0%
+BITBANK15           38      0       0      34        0.0%
+BANK15              38      0       0      35        0.0%
+BITBIGSFR           C8      0       0      36        0.0%
+ABS                  0      0       0      37        0.0%
+BIGRAM             F37      0       0      38        0.0%
+BIGSFR               0      0       0     200        0.0%
+BITSFR_1             0      0       0     200        0.0%
+SFR_1                0      0       0     200        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.46 build 20240104201356 
+Symbol Table                                                                                   Wed Apr 10 18:11:17 2024
+
+                      l5 1002                        l6 1002                     _main 1002  
+                   start 0000             ___param_bank 0000                    ?_main 0000  
+        __initialization 100A             __end_of_main 100A                   ??_main 0000  
+          __activetblptr 0000                   isa$std 0001             __mediumconst 0000  
+             __accesstop 0060  __end_of__initialization 100A            ___rparam_used 0001  
+         __pcstackCOMRAM 0000                  __Hparam 0000                  __Lparam 0000  
+           __psmallconst 1000                  __pcinit 100A                  __ramtop 1000  
+                __ptext0 1002     end_of_initialization 100A      start_initialization 100A  
+            __smallconst 1000                 __Hrparam 0000                 __Lrparam 0000  
+               isa$xinst 0000  
