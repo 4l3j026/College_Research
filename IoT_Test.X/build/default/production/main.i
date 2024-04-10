@@ -9665,6 +9665,68 @@ unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
 # 9 "main.c" 2
 
+# 1 "./Fuses_Configuration.h" 1
+# 11 "./Fuses_Configuration.h"
+#pragma config FOSC = INTIO67
+#pragma config PLLCFG = OFF
+#pragma config PRICLKEN = ON
+#pragma config FCMEN = OFF
+#pragma config IESO = OFF
+
+
+#pragma config PWRTEN = OFF
+#pragma config BOREN = SBORDIS
+#pragma config BORV = 190
+
+
+#pragma config WDTEN = OFF
+#pragma config WDTPS = 32768
+
+
+#pragma config CCP2MX = PORTC1
+#pragma config PBADEN = ON
+#pragma config CCP3MX = PORTE0
+#pragma config HFOFST = ON
+#pragma config T3CMX = PORTC0
+#pragma config P2BMX = PORTD2
+#pragma config MCLRE = EXTMCLR
+
+
+#pragma config STVREN = ON
+#pragma config LVP = OFF
+#pragma config XINST = OFF
+
+
+#pragma config CP0 = OFF
+#pragma config CP1 = OFF
+#pragma config CP2 = OFF
+#pragma config CP3 = OFF
+
+
+#pragma config CPB = OFF
+#pragma config CPD = OFF
+
+
+#pragma config WRT0 = OFF
+#pragma config WRT1 = OFF
+#pragma config WRT2 = OFF
+#pragma config WRT3 = OFF
+
+
+#pragma config WRTC = OFF
+#pragma config WRTB = OFF
+#pragma config WRTD = OFF
+
+
+#pragma config EBTR0 = OFF
+#pragma config EBTR1 = OFF
+#pragma config EBTR2 = OFF
+#pragma config EBTR3 = OFF
+
+
+#pragma config EBTRB = OFF
+# 10 "main.c" 2
+
 # 1 "./LCD_Library.h" 1
 # 38 "./LCD_Library.h"
 void Configurations(void);
@@ -9672,7 +9734,7 @@ void Init_LCD(void);
 void LCD_Instruction(unsigned char Instruction);
 void Send_Instruction_Data(unsigned char Instruction, unsigned char Data);
 void Send_String(unsigned char *String);
-# 10 "main.c" 2
+# 11 "main.c" 2
 
 
 
@@ -9735,5 +9797,5 @@ void Configurations(void) {
 
 
     BAUDCON1bits.BRG16 = 0;
-# 82 "main.c"
+# 83 "main.c"
 }

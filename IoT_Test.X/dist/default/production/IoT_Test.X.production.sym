@@ -16,8 +16,8 @@ _TRISE F96 0 ABS 0
 __Lirdata 0 0 CODE 0
 __HRAM 0 0 ABS 0
 __LRAM 1 0 ABS 0
-__Hconfig 0 0 ABS 0
-__Lconfig 0 0 ABS 0
+__Hconfig 30000E 0 CONFIG 4
+__Lconfig 0 0 CONFIG 4
 ___inthi_stack_hi 0 0 STACK 2
 __Hbigram 0 0 ABS 0
 __Lbigram 0 0 ABS 0
@@ -168,7 +168,7 @@ __ramtop 1000 0 RAM 0
 __mediumconst 0 0 MEDIUMCONST 0
 __Hconst 0 0 CONST 0
 __Lconst 0 0 CONST 0
-__Hspace_4 0 0 ABS 0
+__Hspace_4 60000E 0 ABS 0
 __Lspace_4 0 0 ABS 0
 ___stack_lo 0 0 STACK 2
 __Hbank10 0 0 ABS 0
@@ -209,14 +209,14 @@ smallconst 1000 1001 SMALLCONST 1000 0
 text0 1002 100F CODE 1002 0
 %locals
 dist/default/production\IoT_Test.X.production.o
-C:\Users\aleja\AppData\Local\Temp\xcAs8ng.\driver_tmp_1.s
-1168 100A 0 CODE 0
-1170 100A 0 CODE 0
-1173 100A 0 CODE 0
-1179 100A 0 CODE 0
-1181 100A 0 CODE 0
-1182 100C 0 CODE 0
+C:\Users\aleja\AppData\Local\Temp\xcAshok.\driver_tmp_1.s
+1206 100A 0 CODE 0
+1208 100A 0 CODE 0
+1211 100A 0 CODE 0
+1217 100A 0 CODE 0
+1219 100A 0 CODE 0
+1220 100C 0 CODE 0
 main.c
-15 1002 0 CODE 0
-17 1002 0 CODE 0
-21 1002 0 CODE 0
+16 1002 0 CODE 0
+18 1002 0 CODE 0
+22 1002 0 CODE 0

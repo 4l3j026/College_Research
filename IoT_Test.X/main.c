@@ -7,6 +7,7 @@
 
 
 #include <xc.h>
+#include "Fuses_Configuration.h"
 #include "LCD_Library.h"
 
 //Functions 
@@ -16,7 +17,7 @@ void main(void) {
 
     while (1) {
 
-
+        
 
     }
     return;
