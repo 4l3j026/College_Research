@@ -4,10 +4,15 @@ __S4 0 0 ABS 0
 __S5 0 0 ABS 0
 __Hintentry 0 0 ABS 0
 __Lintentry 0 0 ABS 0
+_LATD F8C 0 ABS 0
+_LATE F8D 0 ABS 0
 _main 1002 0 CODE 0
 ___sp 0 0 STACK 2
 start 0 0 CODE 0
+_TRISD F95 0 ABS 0
+_SPBRG FAF 0 ABS 0
 __Hirdata 0 0 CODE 0
+_TRISE F96 0 ABS 0
 __Lirdata 0 0 CODE 0
 __HRAM 0 0 ABS 0
 __LRAM 1 0 ABS 0
@@ -32,12 +37,19 @@ __Lnvrram 0 0 COMRAM 1
 ___intlo_stack_hi 0 0 STACK 2
 __Hbigsfr 0 0 ABS 0
 __Lbigsfr 0 0 ABS 0
+_PIE1bits F9D 0 ABS 0
 __Heeprom_data 0 0 EEDATA 0
 __Leeprom_data 0 0 EEDATA 0
+_PIR1bits F9E 0 ABS 0
+_LATCbits F8B 0 ABS 0
 __Hintsave_regs 0 0 BIGRAM 1
 __Lintsave_regs 0 0 BIGRAM 1
+_RCONbits FD0 0 ABS 0
+_ANSELC F3A 0 ABS 0
+_ANSELD F3B 0 ABS 0
 __Hbigbss 0 0 BIGRAM 1
 __Lbigbss 0 0 BIGRAM 1
+_ANSELE F3C 0 ABS 0
 __Hintret 0 0 ABS 0
 __Lintret 0 0 ABS 0
 __Hramtop 1000 0 RAM 0
@@ -54,6 +66,7 @@ __Hintcode 0 0 CODE 0
 __Lintcode 0 0 CODE 0
 __Hfardata 0 0 FARRAM 0
 __Lfardata 0 0 FARRAM 0
+_OSCCON FD3 0 ABS 0
 __Habs1 0 0 ABS 0
 __Labs1 0 0 ABS 0
 isa$xinst 0 0 ABS 0
@@ -86,6 +99,8 @@ ___heap_lo 0 0 ABS 0
 end_of_initialization 100A 0 CODE 0
 __Hsivt_lo 0 0 CODE 0
 __Lsivt_lo 0 0 CODE 0
+_RCSTAbits FAB 0 ABS 0
+_TRISCbits F94 0 ABS 0
 __Hibigdata 0 0 CODE 0
 __Libigdata 0 0 CODE 0
 __Hifardata 0 0 CODE 0
@@ -168,8 +183,10 @@ __Hbank14 0 0 ABS 0
 __Lbank14 0 0 ABS 0
 __Hbank15 0 0 ABS 0
 __Lbank15 0 0 ABS 0
+_TXSTA1bits FAC 0 ABS 0
 ___inthi_sp 0 0 STACK 2
 ___intlo_sp 0 0 STACK 2
+_INTCONbits FF2 0 ABS 0
 __smallconst 1000 0 SMALLCONST 0
 __Hreset_vec 0 0 CODE 0
 __Lreset_vec 0 0 CODE 0
@@ -180,6 +197,7 @@ intlevel0 0 0 CODE 0
 intlevel1 0 0 CODE 0
 intlevel2 0 0 CODE 0
 intlevel3 0 0 CODE 0
+_BAUDCON1bits FB8 0 ABS 0
 ___inthi_stack_lo 0 0 STACK 2
 start_initialization 100A 0 CODE 0
 ___intlo_stack_lo 0 0 STACK 2
@@ -191,14 +209,14 @@ smallconst 1000 1001 SMALLCONST 1000 0
 text0 1002 100F CODE 1002 0
 %locals
 dist/default/production\IoT_Test.X.production.o
-C:\Users\aleja\AppData\Local\Temp\xcAsio0.\driver_tmp_1.s
-626 100A 0 CODE 0
-628 100A 0 CODE 0
-631 100A 0 CODE 0
-637 100A 0 CODE 0
-639 100A 0 CODE 0
-640 100C 0 CODE 0
+C:\Users\aleja\AppData\Local\Temp\xcAs8ng.\driver_tmp_1.s
+1168 100A 0 CODE 0
+1170 100A 0 CODE 0
+1173 100A 0 CODE 0
+1179 100A 0 CODE 0
+1181 100A 0 CODE 0
+1182 100C 0 CODE 0
 main.c
-11 1002 0 CODE 0
-13 1002 0 CODE 0
+15 1002 0 CODE 0
 17 1002 0 CODE 0
+21 1002 0 CODE 0

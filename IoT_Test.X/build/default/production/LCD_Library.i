@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "LCD_Library.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,15 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-
-
-
-
-
-
-
-
+# 1 "LCD_Library.c" 2
+# 1 "./LCD_Library.h" 1
+# 16 "./LCD_Library.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -9663,77 +9657,65 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 9 "main.c" 2
-
-# 1 "./LCD_Library.h" 1
+# 16 "./LCD_Library.h" 2
 # 38 "./LCD_Library.h"
 void Configurations(void);
 void Init_LCD(void);
 void LCD_Instruction(unsigned char Instruction);
 void Send_Instruction_Data(unsigned char Instruction, unsigned char Data);
 void Send_String(unsigned char *String);
-# 10 "main.c" 2
+# 1 "LCD_Library.c" 2
 
 
 
-void Configuration(void);
 
-void main(void) {
+void Init_LCD(void) {
 
-    while (1) {
+    _delay((unsigned long)((100)*(16000000/4000.0)));
+    Send_Instruction_Data(0, 0x30);
+    _delay((unsigned long)((5)*(16000000/4000.0)));
+    Send_Instruction_Data(0, 0x30);
+    _delay((unsigned long)((5)*(16000000/4000.0)));
+    Send_Instruction_Data(0, 0x30);
+    Send_Instruction_Data(0, 0x02);
+    Send_Instruction_Data(0, 0x06);
+    Send_Instruction_Data(0, 0x0F);
+    Send_Instruction_Data(0, 0x28);
+    Send_Instruction_Data(0, 0x01);
+    _delay((unsigned long)((100)*(16000000/4000.0)));
 
-
-
-    }
-    return;
 }
 
-void Configurations(void) {
-
-    OSCCON = 0x72;
-
-    ANSELC = 0;
-    ANSELD = 0;
-    ANSELE = 0;
 
 
+void Send_Instruction_Data(unsigned char Instruction, unsigned char Data) {
 
-    TRISCbits.RC4 = 0;
-    TRISCbits.RC5 = 0;
-    TRISD = 0;
-    TRISE = 0;
+    LATCbits.LATC4 = Instruction;
+    LCD_Instruction(Data >> 4);
+    LCD_Instruction(Data & 0x0F);
 
-
-    LATCbits.LC4 = 0;
-    LATCbits.LC5 = 0;
-    LATD = 0;
-    LATE = 0;
+}
 
 
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
-    RCONbits.IPEN = 1;
+void LCD_Instruction(unsigned char Instruction) {
 
-    PIE1bits.RC1IE = 1;
-    PIR1bits.RC1IF = 0;
+    LATCbits.LATC5 = 1;
+    _delay((unsigned long)((15)*(16000000/4000.0)));
+    LATD = Instruction;
+    _delay((unsigned long)((15)*(16000000/4000.0)));
+    LATCbits.LATC5 = 0;
+    _delay((unsigned long)((15)*(16000000/4000.0)));
 
-
-    SPBRG = 103;
-    TRISCbits.RC6 = 1;
-    TRISCbits.RC7 = 1;
-
-
-    TXSTA1bits.TX91 = 0;
-    TXSTA1bits.TXEN1 = 1;
-    TXSTA1bits.SYNC1 = 0;
-    TXSTA1bits.BRGH1 = 1;
+}
 
 
-    RCSTAbits.SPEN1 = 1;
-    RCSTAbits.RX91 = 0;
-    RCSTAbits.CREN1 = 1;
 
+void Send_String(unsigned char *String) {
 
-    BAUDCON1bits.BRG16 = 0;
-# 82 "main.c"
+    for (uint8_t i = 0; String[i] != '\0'; i++) {
+
+        Send_Instruction_Data(1, String[i]);
+
+    }
+
 }
