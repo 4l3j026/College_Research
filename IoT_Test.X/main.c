@@ -38,20 +38,17 @@ void Configurations(void) {
     //Set pins as digital
     ANSELC = 0;
     ANSELD = 0;
-    ANSELE = 0;
 
 
     //Set pins as outputs
     TRISCbits.RC4 = 0; //Pins to LCD 
     TRISCbits.RC5 = 0;
     TRISD = 0; //Pins configuration to LCD and Motor driver. 
-    TRISE = 0; //Pins configuration to PWM.
 
     //Clean pins 
     LATCbits.LC4 = 0;
     LATCbits.LC5 = 0;
     LATD = 0;
-    LATE = 0;
 
     //---- Interrupts Configurations ----
     INTCONbits.GIE = 1; //Global Interrupt Enabled. 
@@ -97,11 +94,17 @@ void __interrupt() Reception(void) {
 
         Rx_Buffer = RCREG1; //Assign RCREG1 buffer to clean the flag.
 
-        if (Rx_Buffer == 'a' || Rx_Buffer == 'b') {
+        if (Rx_Buffer == 'a') {
 
             Send_Instruction_Data(Set, CLR);
             Send_Instruction_Data(Set, ROW2);
-            Send_String(Rx_Buffer); 
+            Send_Instruction_Data(Write, 'a');
+
+        } else if (Rx_Buffer == 'b') {
+
+            Send_Instruction_Data(Set, CLR);
+            Send_Instruction_Data(Set, ROW3);
+            Send_Instruction_Data(Write, 'b');
 
         }
 

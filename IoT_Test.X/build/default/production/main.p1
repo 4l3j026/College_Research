@@ -21,9 +21,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "198
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 198: extern volatile unsigned char ANSELD __attribute__((address(0xF3B)));
 [v _ANSELD `Vuc ~T0 @X0 0 e@3899 ]
-"260
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 260: extern volatile unsigned char ANSELE __attribute__((address(0xF3C)));
-[v _ANSELE `Vuc ~T0 @X0 0 e@3900 ]
 "8515
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 8515:     struct {
 [s S407 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -42,9 +39,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8726
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 8726: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
 [v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
-"8948
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 8948: extern volatile unsigned char TRISE __attribute__((address(0xF96)));
-[v _TRISE `Vuc ~T0 @X0 0 e@3990 ]
 "7790
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 7790:     struct {
 [s S386 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -63,9 +57,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7896
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 7896: extern volatile unsigned char LATD __attribute__((address(0xF8C)));
 [v _LATD `Vuc ~T0 @X0 0 e@3980 ]
-"8008
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 8008: extern volatile unsigned char LATE __attribute__((address(0xF8D)));
-[v _LATE `Vuc ~T0 @X0 0 e@3981 ]
 "16932
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k22.h: 16932:     struct {
 [s S826 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -1132,122 +1123,130 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40
 [; ;main.c: 40:     ANSELD = 0;
 [e = _ANSELD -> -> 0 `i `uc ]
-"41
-[; ;main.c: 41:     ANSELE = 0;
-[e = _ANSELE -> -> 0 `i `uc ]
-"45
-[; ;main.c: 45:     TRISCbits.RC4 = 0;
+"44
+[; ;main.c: 44:     TRISCbits.RC4 = 0;
 [e = . . _TRISCbits 1 4 -> -> 0 `i `uc ]
-"46
-[; ;main.c: 46:     TRISCbits.RC5 = 0;
+"45
+[; ;main.c: 45:     TRISCbits.RC5 = 0;
 [e = . . _TRISCbits 1 5 -> -> 0 `i `uc ]
-"47
-[; ;main.c: 47:     TRISD = 0;
+"46
+[; ;main.c: 46:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"48
-[; ;main.c: 48:     TRISE = 0;
-[e = _TRISE -> -> 0 `i `uc ]
-"51
-[; ;main.c: 51:     LATCbits.LC4 = 0;
+"49
+[; ;main.c: 49:     LATCbits.LC4 = 0;
 [e = . . _LATCbits 1 4 -> -> 0 `i `uc ]
-"52
-[; ;main.c: 52:     LATCbits.LC5 = 0;
+"50
+[; ;main.c: 50:     LATCbits.LC5 = 0;
 [e = . . _LATCbits 1 5 -> -> 0 `i `uc ]
-"53
-[; ;main.c: 53:     LATD = 0;
+"51
+[; ;main.c: 51:     LATD = 0;
 [e = _LATD -> -> 0 `i `uc ]
 "54
-[; ;main.c: 54:     LATE = 0;
-[e = _LATE -> -> 0 `i `uc ]
-"57
-[; ;main.c: 57:     INTCONbits.GIE = 1;
+[; ;main.c: 54:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"58
-[; ;main.c: 58:     INTCONbits.PEIE = 1;
+"55
+[; ;main.c: 55:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"59
-[; ;main.c: 59:     RCONbits.IPEN = 1;
+"56
+[; ;main.c: 56:     RCONbits.IPEN = 1;
 [e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-"61
-[; ;main.c: 61:     PIE1bits.RC1IE = 1;
+"58
+[; ;main.c: 58:     PIE1bits.RC1IE = 1;
 [e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
-"62
-[; ;main.c: 62:     PIR1bits.RC1IF = 0;
+"59
+[; ;main.c: 59:     PIR1bits.RC1IF = 0;
 [e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-"65
-[; ;main.c: 65:     SPBRG = 103;
+"62
+[; ;main.c: 62:     SPBRG = 103;
 [e = _SPBRG -> -> 103 `i `uc ]
-"66
-[; ;main.c: 66:     TRISCbits.RC6 = 1;
+"63
+[; ;main.c: 63:     TRISCbits.RC6 = 1;
 [e = . . _TRISCbits 1 6 -> -> 1 `i `uc ]
-"67
-[; ;main.c: 67:     TRISCbits.RC7 = 1;
+"64
+[; ;main.c: 64:     TRISCbits.RC7 = 1;
 [e = . . _TRISCbits 1 7 -> -> 1 `i `uc ]
-"70
-[; ;main.c: 70:     TXSTA1bits.TX91 = 0;
+"67
+[; ;main.c: 67:     TXSTA1bits.TX91 = 0;
 [e = . . _TXSTA1bits 1 6 -> -> 0 `i `uc ]
-"71
-[; ;main.c: 71:     TXSTA1bits.TXEN1 = 1;
+"68
+[; ;main.c: 68:     TXSTA1bits.TXEN1 = 1;
 [e = . . _TXSTA1bits 1 5 -> -> 1 `i `uc ]
-"72
-[; ;main.c: 72:     TXSTA1bits.SYNC1 = 0;
+"69
+[; ;main.c: 69:     TXSTA1bits.SYNC1 = 0;
 [e = . . _TXSTA1bits 1 4 -> -> 0 `i `uc ]
-"73
-[; ;main.c: 73:     TXSTA1bits.BRGH1 = 1;
+"70
+[; ;main.c: 70:     TXSTA1bits.BRGH1 = 1;
 [e = . . _TXSTA1bits 1 2 -> -> 1 `i `uc ]
-"76
-[; ;main.c: 76:     RCSTAbits.SPEN1 = 1;
+"73
+[; ;main.c: 73:     RCSTAbits.SPEN1 = 1;
 [e = . . _RCSTAbits 2 7 -> -> 1 `i `uc ]
-"77
-[; ;main.c: 77:     RCSTAbits.RX91 = 0;
+"74
+[; ;main.c: 74:     RCSTAbits.RX91 = 0;
 [e = . . _RCSTAbits 2 6 -> -> 0 `i `uc ]
-"78
-[; ;main.c: 78:     RCSTAbits.CREN1 = 1;
+"75
+[; ;main.c: 75:     RCSTAbits.CREN1 = 1;
 [e = . . _RCSTAbits 2 4 -> -> 1 `i `uc ]
-"81
-[; ;main.c: 81:     BAUDCON1bits.BRG16 = 0;
+"78
+[; ;main.c: 78:     BAUDCON1bits.BRG16 = 0;
 [e = . . _BAUDCON1bits 0 3 -> -> 0 `i `uc ]
-"92
-[; ;main.c: 92: }
+"89
+[; ;main.c: 89: }
 [e :UE 858 ]
 }
 [v $root$_Reception `(v ~T0 @X0 0 e ]
-"94
-[; ;main.c: 94: void __attribute__((picinterrupt(("")))) Reception(void) {
+"91
+[; ;main.c: 91: void __attribute__((picinterrupt(("")))) Reception(void) {
 [v _Reception `(v ~T1 @X0 1 ef ]
 {
 [e :U _Reception ]
 [f ]
-"96
-[; ;main.c: 96:     if (PIR1bits.RC1IF) {
+"93
+[; ;main.c: 93:     if (PIR1bits.RC1IF) {
 [e $ ! != -> . . _PIR1bits 0 5 `i -> 0 `i 860  ]
 {
-"98
-[; ;main.c: 98:         Rx_Buffer = RCREG1;
+"95
+[; ;main.c: 95:         Rx_Buffer = RCREG1;
 [e = _Rx_Buffer _RCREG1 ]
-"100
-[; ;main.c: 100:         if (Rx_Buffer == 'a' || Rx_Buffer == 'b') {
-[e $ ! || == -> _Rx_Buffer `ui -> 97 `ui == -> _Rx_Buffer `ui -> 98 `ui 861  ]
+"97
+[; ;main.c: 97:         if (Rx_Buffer == 'a') {
+[e $ ! == -> _Rx_Buffer `ui -> 97 `ui 861  ]
 {
-"102
-[; ;main.c: 102:             Send_Instruction_Data(0, 0x01);
+"99
+[; ;main.c: 99:             Send_Instruction_Data(0, 0x01);
 [e ( _Send_Instruction_Data (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"103
-[; ;main.c: 103:             Send_Instruction_Data(0, 0xC0);
+"100
+[; ;main.c: 100:             Send_Instruction_Data(0, 0xC0);
 [e ( _Send_Instruction_Data (2 , -> -> 0 `i `uc -> -> 192 `i `uc ]
-"104
-[; ;main.c: 104:             Send_String(Rx_Buffer);
-[e ( _Send_String (1 -> _Rx_Buffer `*uc ]
-"106
-[; ;main.c: 106:         }
+"101
+[; ;main.c: 101:             Send_Instruction_Data(1, 'a');
+[e ( _Send_Instruction_Data (2 , -> -> 1 `i `uc -> -> 97 `ui `uc ]
+"103
+[; ;main.c: 103:         } else if (Rx_Buffer == 'b') {
 }
+[e $U 862  ]
 [e :U 861 ]
-"108
-[; ;main.c: 108:     }
+[e $ ! == -> _Rx_Buffer `ui -> 98 `ui 863  ]
+{
+"105
+[; ;main.c: 105:             Send_Instruction_Data(0, 0x01);
+[e ( _Send_Instruction_Data (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+"106
+[; ;main.c: 106:             Send_Instruction_Data(0, 0X94);
+[e ( _Send_Instruction_Data (2 , -> -> 0 `i `uc -> -> 148 `i `uc ]
+"107
+[; ;main.c: 107:             Send_Instruction_Data(1, 'b');
+[e ( _Send_Instruction_Data (2 , -> -> 1 `i `uc -> -> 98 `ui `uc ]
+"109
+[; ;main.c: 109:         }
+}
+[e :U 863 ]
+[e :U 862 ]
+"111
+[; ;main.c: 111:     }
 }
 [e :U 860 ]
-"110
-[; ;main.c: 110: }
+"113
+[; ;main.c: 113: }
 [e :UE 859 ]
 }
 [a 1C 69 83 80 49 50 70 32 84 101 115 116 32 68 97 116 97 0 ]

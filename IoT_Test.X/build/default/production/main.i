@@ -9765,20 +9765,17 @@ void Configurations(void) {
 
     ANSELC = 0;
     ANSELD = 0;
-    ANSELE = 0;
 
 
 
     TRISCbits.RC4 = 0;
     TRISCbits.RC5 = 0;
     TRISD = 0;
-    TRISE = 0;
 
 
     LATCbits.LC4 = 0;
     LATCbits.LC5 = 0;
     LATD = 0;
-    LATE = 0;
 
 
     INTCONbits.GIE = 1;
@@ -9806,7 +9803,7 @@ void Configurations(void) {
 
 
     BAUDCON1bits.BRG16 = 0;
-# 92 "main.c"
+# 89 "main.c"
 }
 
 void __attribute__((picinterrupt(("")))) Reception(void) {
@@ -9815,11 +9812,17 @@ void __attribute__((picinterrupt(("")))) Reception(void) {
 
         Rx_Buffer = RCREG1;
 
-        if (Rx_Buffer == 'a' || Rx_Buffer == 'b') {
+        if (Rx_Buffer == 'a') {
 
             Send_Instruction_Data(0, 0x01);
             Send_Instruction_Data(0, 0xC0);
-            Send_String(Rx_Buffer);
+            Send_Instruction_Data(1, 'a');
+
+        } else if (Rx_Buffer == 'b') {
+
+            Send_Instruction_Data(0, 0x01);
+            Send_Instruction_Data(0, 0X94);
+            Send_Instruction_Data(1, 'b');
 
         }
 
