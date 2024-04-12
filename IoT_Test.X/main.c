@@ -11,16 +11,25 @@
 #include "LCD_Library.h"
 
 //Functions 
-void Configuration(void);
+void Configurations(void);
+
+//Variables 
+unsigned char Rx_Buffer;
 
 void main(void) {
 
+    Configurations();
+    Init_LCD();
+    Send_Instruction_Data(Set, CLR);
+    Send_Instruction_Data(Set, ROW1);
+    Send_String("ESP12F Test Data");
+
     while (1) {
 
-        
+
 
     }
-    return;
+
 }
 
 void Configurations(void) {
@@ -79,5 +88,23 @@ void Configurations(void) {
         TXREG1; ----> Transmitter buffer.
       
      */
+
+}
+
+void __interrupt() Reception(void) {
+
+    if (PIR1bits.RC1IF) { //Check interrupt has been activated. 
+
+        Rx_Buffer = RCREG1; //Assign RCREG1 buffer to clean the flag.
+
+        if (Rx_Buffer == 'a' || Rx_Buffer == 'b') {
+
+            Send_Instruction_Data(Set, CLR);
+            Send_Instruction_Data(Set, ROW2);
+            Send_String(Rx_Buffer); 
+
+        }
+
+    }
 
 }

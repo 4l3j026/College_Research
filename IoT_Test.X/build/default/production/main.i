@@ -9738,16 +9738,25 @@ void Send_String(unsigned char *String);
 
 
 
-void Configuration(void);
+void Configurations(void);
+
+
+unsigned char Rx_Buffer;
 
 void main(void) {
+
+    Configurations();
+    Init_LCD();
+    Send_Instruction_Data(0, 0x01);
+    Send_Instruction_Data(0, 0X80);
+    Send_String("ESP12F Test Data");
 
     while (1) {
 
 
 
     }
-    return;
+
 }
 
 void Configurations(void) {
@@ -9797,5 +9806,23 @@ void Configurations(void) {
 
 
     BAUDCON1bits.BRG16 = 0;
-# 83 "main.c"
+# 92 "main.c"
+}
+
+void __attribute__((picinterrupt(("")))) Reception(void) {
+
+    if (PIR1bits.RC1IF) {
+
+        Rx_Buffer = RCREG1;
+
+        if (Rx_Buffer == 'a' || Rx_Buffer == 'b') {
+
+            Send_Instruction_Data(0, 0x01);
+            Send_Instruction_Data(0, 0xC0);
+            Send_String(Rx_Buffer);
+
+        }
+
+    }
+
 }
