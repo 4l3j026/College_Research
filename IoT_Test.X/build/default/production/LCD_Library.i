@@ -9700,11 +9700,11 @@ void Send_Instruction_Data(unsigned char Instruction, unsigned char Data) {
 void LCD_Instruction(unsigned char Instruction) {
 
     LATCbits.LATC5 = 1;
-    _delay((unsigned long)((15)*(16000000/4000.0)));
+    _delay((unsigned long)((150)*(16000000/4000000.0)));
     LATD = Instruction;
-    _delay((unsigned long)((15)*(16000000/4000.0)));
+    _delay((unsigned long)((150)*(16000000/4000000.0)));
     LATCbits.LATC5 = 0;
-    _delay((unsigned long)((15)*(16000000/4000.0)));
+    _delay((unsigned long)((150)*(16000000/4000000.0)));
 
 }
 

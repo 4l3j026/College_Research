@@ -33,11 +33,11 @@ void Send_Instruction_Data(unsigned char Instruction, unsigned char Data) {
 void LCD_Instruction(unsigned char Instruction) {
 
     EN = 1; //Pin ENabled. 
-    __delay_ms(15); //Wait for the instruction. 
+    __delay_us(150); //Wait for the instruction. 
     LATD = Instruction; //Send Instruction to the port. 
-    __delay_ms(15); //Wait for the instruction. 
+    __delay_us(150); //Wait for the instruction. 
     EN = 0; //Pin disabled.
-    __delay_ms(15); //Wait for the instruction. 
+    __delay_us(150); //Wait for the instruction. 
 
 }
 
